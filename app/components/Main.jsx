@@ -9,12 +9,12 @@ export default function Main(){
         {
             id: 1,
             title: "Songs",
-            url: "songs",
+            url: "dashboard/songs",
         },
         {
             id: 2,
             title: "Your Playlists",
-            url: "playlists",
+            url: "dashboard/playlists",
         }
     ]
 

@@ -28,7 +28,7 @@ export default function Navbar(){
           <div className="relative flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <Link href="/" className="text-white text-lg font-semibold">
+              <Link href="/dashboard" className="text-white text-lg font-semibold">
                 Music App
               </Link>
             </div>
