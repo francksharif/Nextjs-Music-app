@@ -1,6 +1,6 @@
 import { FaPlay, FaPause, FaForward, FaBackward } from "react-icons/fa";
 
-export default function PlayerButton ({ iconType, onClick }){
+export default function PlayerButton ({ iconType, onClick}){
 
     const getIcon = () => {
         switch (iconType) {
@@ -18,7 +18,7 @@ export default function PlayerButton ({ iconType, onClick }){
       };
     
       return (
-        <button className="text-white border-2 border-white p-4 rounded-full">
+        <button onClick={onClick} className="text-white border-2 border-white p-4 rounded-full">
           {getIcon()}
         </button>
       );

@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
         setIsAuthenticated(true);
         localStorage.setItem('isAuthenticated', 'true');
         router.push('/dashboard');
-    }; // <-- Ajout de la parenthèse fermante ici
+    }; 
 
     // Logout Action
     const logout = () => {

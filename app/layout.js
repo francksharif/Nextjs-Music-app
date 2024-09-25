@@ -1,6 +1,6 @@
 import "./globals.css";
 import { AuthProvider } from "./context/AuthProvider";
-import { AudioProvider } from "./context/AudioProvider";
+import { PlayerProvider } from "./context/PlayerProvider";
 
 export const metadata = {
   title: "Music fullstack app",
@@ -12,9 +12,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <AuthProvider>
-          <AudioProvider>
-          {children}
-          </AudioProvider>
+          <PlayerProvider>
+            {children}
+          </PlayerProvider>
         </AuthProvider>
       </body>
     </html>

@@ -9,7 +9,7 @@ export default function Layout({ children }) {
         <html lang="en">
           <body>
             <Navbar />
-              {children}
+               {children}
             <Player />
           </body> 
         </html>
