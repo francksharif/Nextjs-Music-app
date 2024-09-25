@@ -21,7 +21,7 @@ export default function SongsList (){
           key={song.id}
           artist={song.artist}
           title={song.title}
-          duration={formatDuration(song.duration)}
+          duration={song.duration}
         />
       ))}
     </div>
