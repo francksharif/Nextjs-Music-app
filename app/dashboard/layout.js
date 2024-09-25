@@ -1,17 +1,20 @@
 import Navbar from "../components/Navbar";
 import Player from "../components/MusicPlayer/Player";
+import ProtectedRoute from "../components/Protected/Protected";
 
 
-
-export default function RootLayout({ children }) {
+export default function Layout({ children }) {
     return (
-      <html lang="en">
-        <body>
-        <Navbar />
-          {children}
-        <Player />
-        </body>
-      </html>
+        <ProtectedRoute>
+        <html lang="en">
+          <body>
+            <Navbar />
+              {children}
+            <Player />
+          </body> 
+        </html>
+        </ProtectedRoute>
+  
     );
   }
   
