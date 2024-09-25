@@ -7,8 +7,8 @@ const PlayerContext = createContext();
 // Provider Component
 export const PlayerProvider = ({ children }) => {
     const [currentSong, setCurrentSong] = useState({
-        title: 'No',
-        artist: 'Artist',
+        title: 'No Song',
+        artist: 'No Artist',
         duration: 0,
         elapsedTime: 0,
         isPlaying: false,
