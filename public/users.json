@@ -5,6 +5,12 @@
       "username": "user2",
       "password": "test",
       "playlists": []
+    },
+    {
+      "id": 1727232155511,
+      "username": "user3",
+      "password": "testing",
+      "playlists": []
     }
   ]
 }
