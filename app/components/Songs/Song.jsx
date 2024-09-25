@@ -1,8 +1,8 @@
 import PlayerButton from "../MusicPlayer/PlayerButtons";
+import { useAudio } from "@/app/context/AudioProvider";
 
-
-export default function Song({artist, title, duration, onPlay }) {
-
+export default function Song({artist, title, duration, audio }) {
+    const { playSong } = useAudio
 
 
     return (
@@ -18,7 +18,7 @@ export default function Song({artist, title, duration, onPlay }) {
         <div className="text-sm text-gray-400">{duration}</div>
   
         {/* Play Button */}
-        <PlayerButton iconType="play" />
+        <PlayerButton iconType="play" onClick={() => playSong(title, artist, duration, audio)}/>
       </div>
     );
 }
