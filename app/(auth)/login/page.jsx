@@ -15,29 +15,28 @@ export default function page() {
     const { login } = useAuth();
 
     // Function to handle login
+    // Dans la fonction handleLogin
     const handleLogin = async (e) => {
-        e.preventDefault();
+      e.preventDefault();
 
-        // Get the credentials
-        const credentials = {
-            username,
-            password,
-        };
+      // Obtenez les informations d'identification
+      const credentials = { username, password };
 
-        // Verify credentials
-        try {
-            const response = await axios.post('api/auth/login', credentials);
-            if (response.data.success){
-                login();
-                localStorage.setItem('currentUser', JSON.stringify(credentials));
-                router.push('/dashboard');
-            } else{
-                setError('Invalid credentials');
-            }
-        } catch (error){
-            setError('Connexion Error, Try again');
-        }
+      try {
+          const response = await axios.post('api/auth/login', credentials);
+          if (response.data.success) {
+              const userId = response.data.userId;
+              login(userId); 
+              localStorage.setItem('currentUser', JSON.stringify({ id: userId }));
+              router.push('/dashboard');
+          } else {
+              setError('Invalid credentials');
+          }
+      } catch (error) {
+          setError('Connexion Error, Try again');
+      }
     };
+
 
 
   /** */
@@ -46,7 +45,7 @@ export default function page() {
       <div className="bg-gray-800 text-white p-8 rounded-lg shadow-lg">
         <h1 className="text-2xl font-semibold mb-4">Login</h1>
 
-        {/* Formulaire de login */}
+        {/* Form */}
         <form onSubmit={handleLogin}>
         <div className="mb-4">
           <label className="block mb-2 text-sm">Username:</label>
@@ -68,10 +67,10 @@ export default function page() {
           />
         </div>
 
-        {/* Message d'erreur */}
+        {/* Error */}
         {error && <p className="text-red-500 mb-4">{error}</p>}
 
-        {/* Bouton Login */}
+        {/* Login */}
         <button
           className="w-full bg-blue-600 p-2 rounded text-white"
           type="submit"

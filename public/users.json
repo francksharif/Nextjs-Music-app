@@ -4,7 +4,13 @@
       "id": 1727228845418,
       "username": "user",
       "password": "test",
-      "playlists": []
+      "playlists": [
+        {
+          "id": "1",
+          "name": "kk",
+          "songs": []
+        }
+      ]
     }
   ]
 }

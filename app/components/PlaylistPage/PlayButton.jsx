@@ -1,10 +1,7 @@
-import { FaPlay } from "react-icons/fa";
-
+import PlayButton from "../Songs/PlayButton";
 
 export default function PlayButton() {
   return (
-    <div>
-        <FaPlay/>
-    </div>
+    <PlayButton />
   )
 }

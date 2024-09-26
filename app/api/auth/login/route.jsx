@@ -15,7 +15,7 @@ export async function POST(request) {
     const user = users.find((u) => u.username === username && u.password === password);
 
     if (user) {
-        return NextResponse.json({ success: true });
+        return NextResponse.json({ success: true, userId: user.id });
     } else {
         return NextResponse.json({ success: false, message: "Invalid username or password" });
     }
