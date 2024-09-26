@@ -7,10 +7,16 @@
       "playlists": [
         {
           "id": "1",
-          "name": "kk",
+          "name": "New Playlist",
           "songs": []
         }
       ]
+    },
+    {
+      "id": 1727373211503,
+      "username": "user2",
+      "password": "test",
+      "playlists": []
     }
   ]
 }

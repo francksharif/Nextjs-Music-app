@@ -8,11 +8,10 @@ import axios from "axios";
 
 export default function Playlists() {
 
-    const { playlists } = usePlaylist();
     const [newPlaylistName, setNewPlaylistName] = useState('');
     const { id: userId } = useAuth();
     const [error, setError] = useState('');
-    const [playlistId, setPlaylistId] = useState(0);
+    const { updatePlaylist } = usePlaylist();
 
     // Add Playlist
     const definePlaylist = async (playlistName, userId) => {
@@ -21,6 +20,7 @@ export default function Playlists() {
             const response = await axios.post(`/api/playlists/${userId}`, {
                 playlistName: playlistName,
             });
+            updatePlaylist(response.data);
             setNewPlaylistName('');
         }catch (error){
             setError('Error: ', error.response?.data?.message);

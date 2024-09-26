@@ -1,18 +1,14 @@
 import Playlist from "./Playlist";
-import { useAuth } from "@/app/context/AuthProvider";
 import { usePlaylist } from "@/app/context/PlaylistProvider";
 
-export default function MainPlaylist( {id, title }) {
+export default function MainPlaylist() {
     const { playlists } = usePlaylist();
 
-
     return (
-        <div className="w-full">
-            {playlists.map(playlist => {
-                <Playlist id={playlist.id} title={playlist.name} />
-            })}
-            
+        <div className="w-full flex-row space-y-4">
+            {playlists.map(playlist => (
+                <Playlist key={playlist.id} id={playlist.id} title={playlist.name} />
+            ))}
         </div>
     );
 }
-

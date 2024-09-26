@@ -33,8 +33,17 @@ export const PlaylistProvider = ({ children }) => {
     }, [userId]);
 
 
+    const updatePlaylist = (newPlaylist) => {
+        setPlaylists(prevPlaylists => [...prevPlaylists, newPlaylist]);
+    };
+
+
+    const removePlaylist = (playlistId) => {
+        setPlaylists(prevPlaylists => prevPlaylists.filter(playlist => playlist.id !== playlistId));
+    };
+
     return (
-        <PlaylistContext.Provider value={{ playlists }}>
+        <PlaylistContext.Provider value={{ playlists, updatePlaylist, removePlaylist }}>
             {children}
         </PlaylistContext.Provider>
     );
