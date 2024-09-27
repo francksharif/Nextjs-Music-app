@@ -6,18 +6,8 @@
       "password": "test",
       "playlists": [
         {
-          "id": "2",
-          "name": "test",
-          "songs": []
-        },
-        {
-          "id": "3",
-          "name": "My Playlist 1727404829219",
-          "songs": []
-        },
-        {
-          "id": "4",
-          "name": "My Playlist 1727405070035",
+          "id": "1",
+          "name": "Metal",
           "songs": []
         }
       ]
