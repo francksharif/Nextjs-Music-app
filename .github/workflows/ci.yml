@@ -1,29 +1,28 @@
-name: Cypress Tests
+name: CI
 
 on:
   push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  cypress-run:
-    runs-on: ubuntu-22.04
+  build:
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
-          node-version: '20'  
+          node-version: '20' 
+
       - name: Install dependencies
-        run: npm install
+        run: npm install 
 
-      - name: Build app (optional)
-        run: npm run build  
+      
 
-      - name: Start app
-        run: npm run dev & 
-        env:
-          NODE_ENV: development  
-          
-      - name: Cypress run
-        uses: cypress-io/github-action@v6

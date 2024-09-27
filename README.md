@@ -1,7 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Project Overview 
+This Music App enables user authentication and provides a dashboard for navigating playlists and songs. Users can manage songs, create and delete playlists, and enjoy music playback through a simple interface featuring essential controls.
 
-## Getting Started
+## Features
+- User Authentication
+- Playlists and Songs Management
+- Real time sate management using React Context API
+- APIs that allows communication with mock database (Login, Signup, Playlists)
+- Progress bar to see songs duration 
 
+## Requirements
+`
+Nodejs v20.17.0 
+`
+
+## Images  
+### Songs
+![LOGO](docs/images/songs.png)
+### Playlists
+![LOGO](docs/images/playlists.png)
+
+
+
+### Run the Project 
 First, run the development server:
 
 ```bash
@@ -34,3 +54,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+## Cypress Tests 
+* Run cypress (Launch server first with `npm run dev`)
+
+        npx cypress open
+
+* Select 'e2e' window after browser is launched, tests should run properly
