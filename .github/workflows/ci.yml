@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-     cypress-tests:
+    cypress-tests:
     runs-on: ubuntu-latest
 
     steps:
