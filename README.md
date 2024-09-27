@@ -4,7 +4,7 @@ This Music App enables user authentication and provides a dashboard for navigati
 ## Features
 - User Authentication
 - Playlists and Songs Management
-- Real time sate management using React Context API
+- State management using React Context API
 - APIs that allows communication with mock database (Login, Signup, Playlists)
 - Progress bar to see songs duration 
 
