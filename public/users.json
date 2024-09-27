@@ -6,13 +6,18 @@
       "password": "test",
       "playlists": [
         {
-          "id": "1",
-          "name": "New Playlist",
+          "id": "2",
+          "name": "test",
           "songs": []
         },
         {
-          "id": "2",
-          "name": "test",
+          "id": "3",
+          "name": "My Playlist 1727404829219",
+          "songs": []
+        },
+        {
+          "id": "4",
+          "name": "My Playlist 1727405070035",
           "songs": []
         }
       ]
@@ -21,6 +26,30 @@
       "id": 1727373211503,
       "username": "user2",
       "password": "test",
+      "playlists": []
+    },
+    {
+      "id": 1727404574107,
+      "username": "user1727404573923",
+      "password": "newpassword",
+      "playlists": []
+    },
+    {
+      "id": 1727404574172,
+      "username": "existinguser",
+      "password": "password",
+      "playlists": []
+    },
+    {
+      "id": 1727404582710,
+      "username": "user1727404582694",
+      "password": "newpassword",
+      "playlists": []
+    },
+    {
+      "id": 1727404588353,
+      "username": "user1727404588329",
+      "password": "newpassword",
       "playlists": []
     }
   ]
