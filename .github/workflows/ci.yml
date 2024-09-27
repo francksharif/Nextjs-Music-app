@@ -9,20 +9,42 @@ on:
       - main
 
 jobs:
-  build:
+ cypress-tests:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
+  
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '20' 
+          node-version: '20'
+
 
       - name: Install dependencies
-        run: npm install 
+        run: npm install
 
+    
+      - name: Start Next.js server
+        run: npm run build && npm start &
+        env:
+          NODE_ENV: test
+
+    
+      - name: Wait for server to be ready
+        run: npx wait-on http://localhost:3000
+
+      # Run Cypress tests
+      - name: Run Cypress tests
+        run: npx cypress run
+
+    
+      - name: Upload test results
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-results
+          path: cypress/result
       
 
