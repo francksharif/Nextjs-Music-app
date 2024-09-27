@@ -1,32 +1,30 @@
+'use client';
+import { useState, useEffect } from "react";
 import PlaylistSongs from "@/app/components/PlaylistPage/PlaylistSongs";
 import AddSongsList from "@/app/components/PlaylistPage/AddSongsList";
+import songsData from '@/public/songs.json'
 
 export default function PlaylistPage({ params }) {
-    console.log(params)
-    const playlists = [
-        { id: '1', title: 'Chill Vibes', description: 'Relax and unwind with these smooth tunes.' },
-    ];
 
-    const { id } = params;
-    const playlist = playlists.find(p => p.id === id); 
+    const { id, title } = params;
 
-    if (!playlist) {
-        return (
-            <div>
-                Playlist Not Found!
-            </div>
-        );
-    }
+    const [playlistSongs, setPlaylistSongs] = useState([]); 
+
+    const addSong = (song) => {
+        setPlaylistSongs((prevSongs) => [...prevSongs, song]);
+    };
+
+    const removeSong = (songId) => {
+        setPlaylistSongs((prevSongs) => prevSongs.filter(song => song.id !== songId));
+    };
 
     return (
         <div className="p-6 bg-gray-900 min-h-screen">
-
-            <h1 className="text-center my-4 text-xl">Playlist Page</h1>
-        {/** PlayList Content */}
-        <div className="max-w-7xl mx-auto px-2 flex flex-col md:flex-row justify-center p-4 space-y-4 md:space-y-0 md:space-x-4">
-           <PlaylistSongs />
-           <AddSongsList />
-        </div>
+            <h1 className="text-center my-4 text-xl">{title}</h1>
+            <div className="max-w-7xl mx-auto px-2 flex flex-col md:flex-row justify-center p-4 space-y-4 md:space-y-0 md:space-x-4">
+                <PlaylistSongs songs={playlistSongs} removeSong={removeSong} />
+                <AddSongsList onAddSong={addSong} />
+            </div>
         </div>
     );
 }

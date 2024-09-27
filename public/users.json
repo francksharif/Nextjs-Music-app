@@ -9,6 +9,11 @@
           "id": "1",
           "name": "New Playlist",
           "songs": []
+        },
+        {
+          "id": "2",
+          "name": "test",
+          "songs": []
         }
       ]
     },

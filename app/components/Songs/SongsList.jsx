@@ -16,7 +16,7 @@ export default function SongsList (){
 
   return (
     <div className="w-full">
-      {songs.map((song, index) => (
+      {songs.map((song) => (
         <Song
           key={song.id}
           artist={song.artist}
