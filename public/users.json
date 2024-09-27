@@ -6,8 +6,8 @@
       "password": "test",
       "playlists": [
         {
-          "id": "1",
-          "name": "Metal",
+          "id": "2",
+          "name": "My Playlist 1727408076356",
           "songs": []
         }
       ]
@@ -39,6 +39,12 @@
     {
       "id": 1727404588353,
       "username": "user1727404588329",
+      "password": "newpassword",
+      "playlists": []
+    },
+    {
+      "id": 1727408074392,
+      "username": "user1727408073909",
       "password": "newpassword",
       "playlists": []
     }
